@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2525481435239486714}
   - component: {fileID: 8406213400269405014}
-  - component: {fileID: 1398897272949854492}
   m_Layer: 0
   m_Name: fig_tree
   m_TagString: Untagged
@@ -88,22 +87,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1398897272949854492
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 757666842422043491}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99407cf846493c7408ef4470f5d6181c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fruits:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!1001 &6273184022297194375
 PrefabInstance:
   m_ObjectHideFlags: 0

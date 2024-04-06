@@ -10,6 +10,7 @@ public class CameraController : MonoBehaviour
     [SerializeField] Camera camFieldOne;
     [SerializeField] Camera camFieldTwo;
     [SerializeField] Camera camFieldThree;
+    [SerializeField] GameObject computer;
     [SerializeField] float time;
 
     void Update()
@@ -37,6 +38,11 @@ public class CameraController : MonoBehaviour
                 {
                     camRoom.gameObject.SetActive(false);
                     camFieldThree.gameObject.SetActive(true);
+                }
+                if (clickedObject.name =="Computer")
+                {
+                    Debug.Log("computer clicked");
+                    computer.gameObject.SetActive(true);
                 }
             }
         }
