@@ -1,17 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
 
 public class gameManager : MonoBehaviour
 {
-    public int figs = 0;
-    // Start is called before the first frame update
+    [HideInInspector]
+    public int figs;
+    public int money;
+
     void Start()
     {
-        
+        figs = 5;
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         
