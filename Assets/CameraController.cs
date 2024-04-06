@@ -6,11 +6,10 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     // Start is called before the first frame update
-    [SerializeField] Transform windowsOneTrans;
-    [SerializeField] Transform windowsTwoTrans;
-    [SerializeField] Transform windowsThreeTrans;
-    [SerializeField] Transform roomDefTrans;
-    [SerializeField] Camera cam;
+    [SerializeField] Camera camRoom;
+    [SerializeField] Camera camFieldOne;
+    [SerializeField] Camera camFieldTwo;
+    [SerializeField] Camera camFieldThree;
     [SerializeField] float time;
 
     void Update()
@@ -23,34 +22,32 @@ public class CameraController : MonoBehaviour
             if (Physics.Raycast(ray, out hit))
             {
                 GameObject clickedObject = hit.collider.gameObject;
-                Debug.Log(gameObject);
-                CurrentClickedGameObject(clickedObject);
-                // Handle interaction based on the clickedObject
+                Debug.Log(clickedObject.name);
+                if(clickedObject.name == "FieldOne")
+                {
+                    camRoom.gameObject.SetActive(false);
+                    camFieldOne.gameObject.SetActive(true);
+                }
+                if(clickedObject.name == "FieldTwo")
+                {
+                    camRoom.gameObject.SetActive(false);
+                    camFieldTwo.gameObject.SetActive(true);
+                }
+                if(clickedObject.name == "FieldThree")
+                {
+                    camRoom.gameObject.SetActive(false);
+                    camFieldThree.gameObject.SetActive(true);
+                }
             }
         }
         if(Input.GetMouseButtonDown(1))
         {
-            cam.transform.DOMove(new Vector3(roomDefTrans.position.x, roomDefTrans.position.y, roomDefTrans.position.z), time );
-
+            Debug.Log("Mouse button two");
+            camRoom.gameObject.SetActive(true);
+            camFieldOne.gameObject.SetActive(false);
+            camFieldTwo.gameObject.SetActive(false);
+            camFieldThree.gameObject.SetActive(false);
         }
     }
 
-    public void CurrentClickedGameObject(GameObject gameObject)
-    {
-        Debug.Log(gameObject.tag + " " + gameObject.name);
-        if(gameObject.tag=="WindowOne")
-        {
-            cam.transform.DOMove(new Vector3(windowsOneTrans.position.x, windowsOneTrans.position.y, windowsOneTrans.position.z), time );
-        }
-        Debug.Log(gameObject.tag + " " + gameObject.name);
-        if (gameObject.tag == "WindowTwo") 
-        {
-            cam.transform.DOMove(new Vector3(windowsTwoTrans.position.x, windowsTwoTrans.position.y, windowsTwoTrans.position.z), time );
-        }
-        Debug.Log(gameObject.tag + " " + gameObject.name);
-        if(gameObject.tag=="WindowThree")
-        {
-            cam.transform.DOMove(new Vector3(windowsThreeTrans.position.x, windowsThreeTrans.position.y, windowsThreeTrans.position.z), time );
-        }
-    }
 }
