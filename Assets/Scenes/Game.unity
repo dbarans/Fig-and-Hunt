@@ -242,8 +242,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 499a377bf3c288c4e92b77a8f1bdf875, type: 3}
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300000, guid: fd41001063474be4e873c8a15d32ab09, type: 3}
   m_Color: {r: 0.6132076, g: 0.43676576, b: 0.43676576, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -263,9 +263,9 @@ Transform:
   m_GameObject: {fileID: 79299327}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -31.7, y: 29.6, z: -14.96}
-  m_LocalScale: {x: 0.2487, y: 0.2487, z: 0.2487}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: -34.6, y: 26.1, z: 0}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -288,7 +288,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 80, y: 45, z: 0.2}
+  m_Size: {x: 17.239998, y: 19.929998, z: 0.19999999}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &274405198
 GameObject:
@@ -1097,8 +1097,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 499a377bf3c288c4e92b77a8f1bdf875, type: 3}
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300000, guid: 08efe4da721299544875d2cfde3024dc, type: 3}
   m_Color: {r: 0.6132076, g: 0.43676576, b: 0.43676576, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1118,9 +1118,9 @@ Transform:
   m_GameObject: {fileID: 742041693}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 36.3, y: 26.1, z: -4.5}
-  m_LocalScale: {x: 0.2487, y: 0.2487, z: 0.2487}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 36.3, y: 26.1, z: 0}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1143,7 +1143,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 80, y: 45, z: 0.2}
+  m_Size: {x: 17.419998, y: 19.389997, z: 0.19999999}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &872066584 stripped
 Transform:
@@ -1454,8 +1454,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 499a377bf3c288c4e92b77a8f1bdf875, type: 3}
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300000, guid: de9447d0c0daba142a1243dc10d438f4, type: 3}
   m_Color: {r: 0.6132076, g: 0.43676576, b: 0.43676576, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1475,9 +1475,9 @@ Transform:
   m_GameObject: {fileID: 1556040247}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.1, y: 28.6, z: -4.5}
-  m_LocalScale: {x: 0.2487, y: 0.2487, z: 0.2487}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 0.21, y: 26.1, z: 0}
+  m_LocalScale: {x: 0.43, y: 0.43, z: 0.43}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1500,7 +1500,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 80, y: 45, z: 0.2}
+  m_Size: {x: 49.622807, y: 31.62, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &1577520396 stripped
 Transform:
@@ -1907,7 +1907,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: abbdd169f723db54181ca2b83a6c708e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1928,7 +1928,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.76, y: 1.69, z: 0}
-  m_LocalScale: {x: 18.23, y: 18.23, z: 18.23}
+  m_LocalScale: {x: 0.44, y: 0.44, z: 0.44}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -1952,7 +1952,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 0.2}
+  m_Size: {x: 80, y: 45, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2135890635
 GameObject:

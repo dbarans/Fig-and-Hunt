@@ -84,9 +84,9 @@ public class market : MonoBehaviour
     {
         sellValue = figsToSell * marketPrice;
         figsToSellText.text = figsToSell.ToString();
-        sellValueText.text = sellValue.ToString() + "$";
+        sellValueText.text = sellValue.ToString("0.00") + "$";
         marketPriceText.text = "market value: " + marketPrice.ToString("0.00") + "$";
-        moneyText.text = "Money: " + gameManager.money.ToString() + "$";
+        moneyText.text = "Money: " + gameManager.money.ToString("0.00") + "$";
         figsText.text = "Figs: " + gameManager.figs.ToString();
     }
     public void sellFigs()
