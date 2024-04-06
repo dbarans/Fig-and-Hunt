@@ -1,9 +1,11 @@
+using DG.Tweening.Core.Easing;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Fruit : MonoBehaviour
 {
+    private gameManager gameManager;
     private int currentState = 1;
 
     public float minTime = 3f;
@@ -13,6 +15,7 @@ public class Fruit : MonoBehaviour
 
     private void Start()
     {
+        gameManager = FindObjectOfType<gameManager>();
         SetFruitState1();
         StartChangeStateCoroutine();
     }
@@ -63,5 +66,16 @@ public class Fruit : MonoBehaviour
        
 
         StartChangeStateCoroutine(); 
+    }
+
+    private void OnMouseDown()
+    {
+        if (currentState == 3)
+        {
+            SetFruitState1();
+            StartChangeStateCoroutine();
+            gameManager.figs += 1;
+            Debug.Log(gameManager.figs);
+        }
     }
 }
