@@ -436,8 +436,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   figsToSell: 0
-  marketValue: 1.14
+  marketPrice: 1
   figsToSellText: {fileID: 4481622455851095222}
+  sellValueText: {fileID: 55826348181705592}
+  marketPriceText: {fileID: 7694983297787479}
+  figsText: {fileID: 5436533469249035199}
+  moneyText: {fileID: 622490425605109858}
 --- !u!1 &1291246108610233561
 GameObject:
   m_ObjectHideFlags: 0
@@ -607,7 +611,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 67.1, y: 0}
+  m_AnchoredPosition: {x: 47.7, y: 0}
   m_SizeDelta: {x: 59.1, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6335568580498079224
@@ -691,7 +695,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6256141308992198702}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6936014708485507233}
+        m_TargetAssemblyTypeName: market, Assembly-CSharp
+        m_MethodName: sellFigs
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1613311192235478085
 GameObject:
   m_ObjectHideFlags: 0
@@ -890,7 +906,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: abbdd169f723db54181ca2b83a6c708e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0f09a588985abc2429127135a581ade9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1732,7 +1748,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 134.2, y: 0}
-  m_SizeDelta: {x: 54.7, y: 50}
+  m_SizeDelta: {x: 74.7, y: 51.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8134769086560640572
 CanvasRenderer:
@@ -1789,8 +1805,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 26
-  m_fontSizeBase: 26
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1825,7 +1841,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -13.999943, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -2762,7 +2778,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: abbdd169f723db54181ca2b83a6c708e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0f09a588985abc2429127135a581ade9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

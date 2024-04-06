@@ -7,11 +7,14 @@ public class gameManager : MonoBehaviour
 {
     [HideInInspector]
     public int figs;
-    public int money;
-
-    void Start()
+    public float money;
+    private void Awake()
     {
         figs = 5;
+    }
+    void Start()
+    {
+        
     }
 
 
@@ -19,4 +22,5 @@ public class gameManager : MonoBehaviour
     {
         
     }
+  
 }
