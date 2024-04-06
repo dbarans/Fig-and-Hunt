@@ -12,10 +12,16 @@ public class CameraController : MonoBehaviour
     [SerializeField] Camera camFieldThree;
     [SerializeField] GameObject computer;
     [SerializeField] float time;
+    private bool isInMainRoom;
 
+    private void Start()
+    {
+        isInMainRoom = true;
+    }
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+       
+        if (Input.GetMouseButtonDown(0) && isInMainRoom)
         { // Left click
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
@@ -28,23 +34,30 @@ public class CameraController : MonoBehaviour
                 {
                     camRoom.gameObject.SetActive(false);
                     camFieldOne.gameObject.SetActive(true);
+                    isInMainRoom = false;
                 }
                 if(clickedObject.name == "Window2")
                 {
                     camRoom.gameObject.SetActive(false);
                     camFieldTwo.gameObject.SetActive(true);
-                }
-                if(clickedObject.name == "Window3")
+                    isInMainRoom = false;
+
+                    }
+                    if (clickedObject.name == "Window3")
                 {
                     camRoom.gameObject.SetActive(false);
                     camFieldThree.gameObject.SetActive(true);
-                }
-                if (clickedObject.name =="Computer")
+                    isInMainRoom = false;
+
+                    }
+                    if (clickedObject.name =="Computer")
                 {
                     Debug.Log("computer clicked");
                     computer.gameObject.SetActive(true);
+                     isInMainRoom = false;
+
+                    }
                 }
-            }
         }
         if(Input.GetMouseButtonDown(1))
         {
@@ -53,6 +66,8 @@ public class CameraController : MonoBehaviour
             camFieldOne.gameObject.SetActive(false);
             camFieldTwo.gameObject.SetActive(false);
             camFieldThree.gameObject.SetActive(false);
+            computer.gameObject.SetActive(false);
+            isInMainRoom = true;
         }
     }
 

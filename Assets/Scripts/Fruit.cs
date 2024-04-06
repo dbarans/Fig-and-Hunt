@@ -13,9 +13,13 @@ public class Fruit : MonoBehaviour
 
     private IEnumerator currentCoroutine;
 
-    private void Start()
+    private void Awake()
     {
         gameManager = FindObjectOfType<gameManager>();
+    }
+    private void Start()
+    {
+        
         SetFruitState1();
         StartChangeStateCoroutine();
     }
