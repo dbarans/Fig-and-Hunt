@@ -23,17 +23,17 @@ public class CameraController : MonoBehaviour
             {
                 GameObject clickedObject = hit.collider.gameObject;
                 Debug.Log(clickedObject.name);
-                if(clickedObject.name == "FieldOne")
+                if(clickedObject.name == "Window1")
                 {
                     camRoom.gameObject.SetActive(false);
                     camFieldOne.gameObject.SetActive(true);
                 }
-                if(clickedObject.name == "FieldTwo")
+                if(clickedObject.name == "Window2")
                 {
                     camRoom.gameObject.SetActive(false);
                     camFieldTwo.gameObject.SetActive(true);
                 }
-                if(clickedObject.name == "FieldThree")
+                if(clickedObject.name == "Window3")
                 {
                     camRoom.gameObject.SetActive(false);
                     camFieldThree.gameObject.SetActive(true);
