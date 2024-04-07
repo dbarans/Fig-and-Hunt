@@ -8,14 +8,11 @@ public class entry : MonoBehaviour
     public int quantity;
     public float value;
     public float price;
-    private gameManager gameManager;
+    [SerializeField] private gameManager gameManager;
     [SerializeField] private TextMeshProUGUI valueText;
     [SerializeField] private TextMeshProUGUI quantityText;
 
-    private void Start()
-    {
-        gameManager = GetComponent<gameManager>();
-    }
+  
     public void IncreaseQuantity()
     {
         quantity += 1;

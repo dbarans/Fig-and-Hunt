@@ -11,23 +11,8 @@ public class gameManager : MonoBehaviour
     public int item1;
     public int item2;
     public int item3;
-    public float item1Price;
-    public float item2Price;
-    public float item3Price;
-
-    private void Awake()
-    {
-        figs = 5;
-    }
-    void Start()
-    {
-        
-    }
 
 
-    void Update()
-    {
-       
-    }
+
   
 }

@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
+using TMPro;
 using UnityEngine;
 
 public class Cart : MonoBehaviour
@@ -8,6 +10,7 @@ public class Cart : MonoBehaviour
     [SerializeField] private entry entry2;
     [SerializeField] private entry entry3;
     [SerializeField] private gameManager gameManager;
+    [SerializeField] private TextMeshProUGUI valueText;
     private float value;
 
     private void Start()
@@ -17,7 +20,9 @@ public class Cart : MonoBehaviour
     private void Update()
     {
         UpdateEntry();
-        value = entry1.value + entry2.value + entry3.value;
+        value = entry1.quantity * entry1.price + entry2.quantity * entry2.price + entry3.quantity * entry3.price;
+        valueText.text = "Total: " + value.ToString("0.00") + "$";
+
     }
     public void UpdateEntry()
     {
@@ -53,16 +58,20 @@ public class Cart : MonoBehaviour
         
         if (gameManager.money >= value)
         {
-            
+            gameManager.money -= value;
             gameManager.item1 += entry1.quantity;
             gameManager.item2 += entry2.quantity;
             gameManager.item3 += entry3.quantity;
+
             entry1.quantity = 0;
             entry2.quantity = 0;
             entry3.quantity = 0;
-            gameManager.money -= value;
-            Debug.Log(gameManager.money);
+
+            value = 0;
+            valueText.text = "Total: " + value.ToString("0.00") + "$";
+
         }
+       
 
     }
 }
