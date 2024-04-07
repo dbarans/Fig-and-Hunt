@@ -30,7 +30,7 @@ public class MonsterSpawner : MonoBehaviour
 
     void SpawnMonster()
     {
-        Vector3 spawnPosition = transform.position + Random.insideUnitSphere * spawnRadius;
-        Instantiate(monsterPrefab, spawnPosition, Quaternion.identity);
+        Vector2 spawnPosition = (Vector2)transform.position + Random.insideUnitCircle * spawnRadius;
+        Instantiate(monsterPrefab, spawnPosition, Quaternion.Euler(0, 0, 0));
     }
 }

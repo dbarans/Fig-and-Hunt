@@ -21,12 +21,7 @@ public class Animal : MonoBehaviour
             }
         }
 
-        GameObject[] trees = treeManager.trees;
-        if (trees.Length > 0)
-        {
-            int randomIndex = Random.Range(0, trees.Length);
-            targetTree = trees[randomIndex];
-        }
+        FindRandomTree();
     }
 
     void Update()
@@ -37,7 +32,6 @@ public class Animal : MonoBehaviour
 
             transform.Translate(direction * speed * Time.deltaTime);
 
-           
             if (direction.x < 0)
             {
                 spriteRenderer.flipX = false;
@@ -47,6 +41,46 @@ public class Animal : MonoBehaviour
                 spriteRenderer.flipX = true;
             }
         }
+        else
+        {
+            SearchNearestTree();
+        }
+    }
+
+    void FindRandomTree()
+    {
+        GameObject[] trees = treeManager.trees;
+        if (trees.Length > 0)
+        {
+            int randomIndex = Random.Range(0, trees.Length);
+            targetTree = trees[randomIndex];
+        }
+    }
+
+    void SearchNearestTree()
+    {
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, 200f); // Ustaw promieñ wyszukiwania
+
+        float minDistance = Mathf.Infinity;
+        GameObject nearestTree = null;
+
+        foreach (Collider2D collider in colliders)
+        {
+            if (collider.CompareTag("Tree"))
+            {
+                GameObject tree = collider.gameObject;
+                float distance = Vector3.Distance(transform.position, tree.transform.position);
+                if (distance < minDistance)
+                {
+                    minDistance = distance;
+                    nearestTree = tree;
+                }
+            }
+        }
+
+        if (nearestTree != null)
+        {
+            targetTree = nearestTree;
+        }
     }
 }
-

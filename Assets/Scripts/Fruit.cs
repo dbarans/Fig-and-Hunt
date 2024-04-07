@@ -9,8 +9,8 @@ public class Fruit : MonoBehaviour
     private int figs;
     private int currentState = 1;
 
-    public float minTime = 3f;
-    public float maxTime = 7f;
+    private float minTime = 5f;
+    private float maxTime = 20f;
 
     private IEnumerator currentCoroutine;
 
@@ -58,6 +58,7 @@ public class Fruit : MonoBehaviour
     private IEnumerator ChangeStateAfterRandomDelay()
     {
         float delay = Random.Range(minTime, maxTime);
+        
         yield return new WaitForSeconds(delay);
 
         if (currentState == 1)
@@ -82,5 +83,10 @@ public class Fruit : MonoBehaviour
             gameManager.increaseFigs();
             
         }
+    }
+    public void Eat()
+    {
+        SetFruitState1();
+
     }
 }
