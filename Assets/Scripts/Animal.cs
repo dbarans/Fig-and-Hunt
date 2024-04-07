@@ -46,6 +46,11 @@ public class Animal : MonoBehaviour
             SearchNearestTree();
         }
     }
+    private void OnMouseDown()
+    {
+        Debug.Log("destroy fox");
+        Destroy(gameObject);
+    }
 
     void FindRandomTree()
     {

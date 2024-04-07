@@ -1918,7 +1918,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monsterPrefab: {fileID: 1872858327067013925, guid: 8e0191d7a7fcb0f45ae25ec0e1eec283, type: 3}
   minSpawnInterval: 1
-  maxSpawnInterval: 2
+  maxSpawnInterval: 1
   spawnRadius: 30
 --- !u!4 &1821968026
 Transform:

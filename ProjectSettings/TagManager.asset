@@ -9,6 +9,7 @@ TagManager:
   - WindowThree
   - Fox
   - Fruit
+  - Tree
   layers:
   - Default
   - TransparentFX
