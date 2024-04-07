@@ -1,11 +1,13 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class FigTree : MonoBehaviour
 {
     private TreeManager treeManager;
     private GameObject[] fruits;
-    private bool isEating = false;
+    private Dictionary<GameObject, Coroutine> eatingCoroutines = new Dictionary<GameObject, Coroutine>();
+    private HashSet<GameObject> foxesInside = new HashSet<GameObject>(); // Zbiór przechowuj¹cy referencje do wszystkich lisi wewn¹trz obszaru kolizji
 
     void Start()
     {
@@ -29,57 +31,81 @@ public class FigTree : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Fox" && !isEating)
+        if (collision.gameObject.CompareTag("Fox") && !IsEating(collision.gameObject))
         {
-            StartCoroutine(EatFruits());
+            Coroutine coroutine = StartCoroutine(EatFruits());
+            eatingCoroutines.Add(collision.gameObject, coroutine);
+            foxesInside.Add(collision.gameObject);
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        StopCoroutine(eatingCoroutines[collision.gameObject]);
+        if (collision.gameObject.CompareTag("Fox"))
+        {
+            foxesInside.Remove(collision.gameObject);
+            if (foxesInside.Count == 0) 
+            {
+                CheckForNewFruits(); 
+            }
+            else
+            {
+
+                FoxDestroy(collision.gameObject); 
+            }
         }
     }
 
     IEnumerator EatFruits()
     {
-        isEating = true;
-
         foreach (GameObject fruit in fruits)
         {
             fruit.GetComponent<Fruit>().Eat();
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(0.3f);
         }
-
-        isEating = false;
-
-        CheckForNewFruits();
+        DestroyTree();
+    
     }
 
     void CheckForNewFruits()
     {
-        fruits = new GameObject[transform.childCount];
-        for (int i = 0; i < transform.childCount; i++)
-        {
-            fruits[i] = transform.GetChild(i).gameObject;
-        }
-
-
         foreach (GameObject fruit in fruits)
         {
             if (fruit.activeSelf)
             {
                 StartCoroutine(EatFruit(fruit));
-                DestroyTree();
+                return;
             }
         }
 
-
+      
+        DestroyTree();
     }
 
     IEnumerator EatFruit(GameObject fruit)
     {
         fruit.GetComponent<Fruit>().Eat();
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(0.3f);
     }
 
     void DestroyTree()
     {
         Debug.Log("Destroying tree...");
         gameObject.SetActive(false);
+    }
+
+    void FoxDestroy(GameObject fox)
+    {
+        if (eatingCoroutines.ContainsKey(fox))
+        {
+            StopCoroutine(eatingCoroutines[fox]);
+            eatingCoroutines.Remove(fox);
+        }
+    }
+
+    bool IsEating(GameObject fox)
+    {
+        return eatingCoroutines.ContainsKey(fox);
     }
 }
