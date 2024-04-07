@@ -10,10 +10,12 @@ public class Animal : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private SoundManager soundManager;
     [SerializeField] private gameManager gameManager;
-    private bool isFrozen = false; // Flaga okreœlaj¹ca, czy obiekt jest zamro¿ony
+    private bool isFrozen = false; 
+    private SpriteChanger changer;
 
     void Start()
     {
+        changer = GetComponent<SpriteChanger>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         soundManager = FindAnyObjectByType<SoundManager>();
         gameManager = FindAnyObjectByType<gameManager>();
@@ -71,6 +73,7 @@ public class Animal : MonoBehaviour
         if(collision.gameObject.CompareTag("Tree"))
         {
             isFrozen = true;
+            changer.isFreeze = true;
         }
 
     }
@@ -79,6 +82,7 @@ public class Animal : MonoBehaviour
         if (collision.gameObject.CompareTag("Tree"))
         {
             isFrozen = false;
+            changer.isFreeze = false;
         }
     }
 

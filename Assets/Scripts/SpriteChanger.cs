@@ -2,12 +2,12 @@ using UnityEngine;
 
 public class SpriteChanger : MonoBehaviour
 {
-    [SerializeField] private Sprite[] sprites; // Tablica sprite'ów, które maj¹ byæ zmieniane
-    [SerializeField] private float changeInterval = 1f; // Interwa³ zmiany sprite'ów
+    [SerializeField] private Sprite[] sprites;
+    [SerializeField] private float changeInterval = 1f;
     private SpriteRenderer spriteRenderer;
-    private int currentIndex = 0; // Indeks aktualnie wybranego sprite'a
-    private float timer = 0f; // Licznik czasu
-
+    private int currentIndex = 0;
+    private float timer = 0f;
+    public bool isFreeze;
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -15,27 +15,31 @@ public class SpriteChanger : MonoBehaviour
         if (sprites.Length == 0)
         {
             Debug.LogError("No sprites assigned!");
+            isFreeze = false;
         }
         else
         {
-            spriteRenderer.sprite = sprites[currentIndex]; // Ustawienie pocz¹tkowego sprite'a
+            spriteRenderer.sprite = sprites[currentIndex];
         }
     }
-
-    void Update()
-    {
-        timer += Time.deltaTime; // Zwiêkszenie licznika czasu
-
-        if (timer >= changeInterval)
+        void Update()
         {
-            ChangeSprite(); // Zmiana sprite'a, gdy up³ynie okreœlony czas
-            timer = 0f; // Zresetowanie licznika czasu
+            timer += Time.deltaTime;
+
+            if (timer >= changeInterval)
+            {
+                ChangeSprite();
+                timer = 0f;
+            }
+        }
+
+        void ChangeSprite()
+        {
+            if (!isFreeze)
+            {
+                currentIndex = (currentIndex + 1) % sprites.Length;
+                spriteRenderer.sprite = sprites[currentIndex];
+            }
         }
     }
 
-    void ChangeSprite()
-    {
-        currentIndex = (currentIndex + 1) % sprites.Length; // Zwiêkszenie indeksu z zachowaniem granic tablicy
-        spriteRenderer.sprite = sprites[currentIndex]; // Zmiana sprite'a na kolejny w tablicy
-    }
-}

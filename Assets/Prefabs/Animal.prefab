@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   treeManager: {fileID: 0}
-  speed: 9.14
+  speed: 7
   gameManager: {fileID: 0}
 --- !u!114 &2029783672438855130
 MonoBehaviour:
@@ -121,6 +121,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 7ba47cad32c0d2b448f20385c4a8de3d, type: 3}
   - {fileID: 21300000, guid: d97093ad80745d64b8f7d909567d84af, type: 3}
   changeInterval: 0.18
+  isFreeze: 0
 --- !u!50 &6860053354027298602
 Rigidbody2D:
   serializedVersion: 4

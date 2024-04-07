@@ -15,9 +15,9 @@ public class SoundManager : MonoBehaviour
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        audioSource.loop = true; // Ustawienie zapêtlenia muzyki t³a
-        audioSource.clip = backgroundMusic; // Ustawienie muzyki t³a
-        //audioSource.Play(); // Odtworzenie muzyki t³a
+        audioSource.loop = true;
+        audioSource.clip = backgroundMusic;
+       
     }
 
     public void PlayButtonClickSound()

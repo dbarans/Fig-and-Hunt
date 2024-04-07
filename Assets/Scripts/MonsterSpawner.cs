@@ -5,15 +5,16 @@ using UnityEngine;
 public class MonsterSpawner : MonoBehaviour
 {
     public GameObject monsterPrefab;
-    public float minSpawnInterval = 1f; // Minimalny czas miêdzy pojawieniami potworów
-    public float maxSpawnInterval = 5f; // Maksymalny czas miêdzy pojawieniami potworów
+    public float minSpawnInterval = 1f; 
+    public float maxSpawnInterval = 5f; 
     public float spawnRadius = 5f;
 
     private float spawnTimer = 0f;
-    private float nextSpawnTime; // Czas, w którym pojawi siê nastêpny potwór
+    private float nextSpawnTime; 
 
     void Start()
     {
+        SpawnMonster();
         nextSpawnTime = Random.Range(minSpawnInterval, maxSpawnInterval);
     }
 
@@ -23,7 +24,7 @@ public class MonsterSpawner : MonoBehaviour
         if (spawnTimer >= nextSpawnTime)
         {
             SpawnMonster();
-            nextSpawnTime = Random.Range(minSpawnInterval, maxSpawnInterval); // Losowanie nowego czasu do nastêpnego potwora
+            nextSpawnTime = Random.Range(minSpawnInterval, maxSpawnInterval); 
             spawnTimer = 0f;
         }
     }
