@@ -12,12 +12,10 @@ public class Cart : MonoBehaviour
     [SerializeField] private gameManager gameManager;
     [SerializeField] private TextMeshProUGUI valueText;
     [SerializeField] private TextMeshProUGUI moneyText;
+    [SerializeField] private Items items;
     private float value;
 
-    private void Start()
-    {
-       
-    }
+   
     private void Update()
     {
         UpdateEntry();
@@ -61,9 +59,9 @@ public class Cart : MonoBehaviour
         if (gameManager.money >= value)
         {
             gameManager.money -= value;
-            gameManager.item1 += entry1.quantity;
-            gameManager.item2 += entry2.quantity;
-            gameManager.item3 += entry3.quantity;
+            items.item1Quantity += entry1.quantity;
+            items.item2Quantity += entry2.quantity;
+            items.item3Quantity += entry3.quantity;
 
             entry1.quantity = 0;
             entry2.quantity = 0;

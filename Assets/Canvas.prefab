@@ -1274,6 +1274,7 @@ MonoBehaviour:
   gameManager: {fileID: 0}
   valueText: {fileID: 8625370412062267231}
   moneyText: {fileID: 3405608586950587891}
+  items: {fileID: 4450428900948005029}
 --- !u!1 &2167005857351088338
 GameObject:
   m_ObjectHideFlags: 0
@@ -2125,7 +2126,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 1.9916077, y: -13.9709015}
+  m_AnchoredPosition: {x: 1.9916077, y: -13.970886}
   m_SizeDelta: {x: -14.574, y: -38.6291}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1181506168498957630
@@ -4092,6 +4093,7 @@ GameObject:
   - component: {fileID: 3891951361495114322}
   - component: {fileID: 1388410603405218033}
   - component: {fileID: 1273208644802035005}
+  - component: {fileID: 4450428900948005029}
   m_Layer: 5
   m_Name: items
   m_TagString: Untagged
@@ -4183,6 +4185,24 @@ MonoBehaviour:
   m_Spacing: {x: -20, y: -20}
   m_Constraint: 0
   m_ConstraintCount: 2
+--- !u!114 &4450428900948005029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6309908012225570777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d19e7b9203cb0ea44bd39b52f7a5c4a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  items: []
+  gameManager: {fileID: 0}
+  item1Quantity: 0
+  item2Quantity: 0
+  item3Quantity: 0
+  item4Quantity: 0
 --- !u!1 &6462226761081801903
 GameObject:
   m_ObjectHideFlags: 0
