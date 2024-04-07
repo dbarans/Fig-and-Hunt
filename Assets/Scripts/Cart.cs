@@ -12,6 +12,7 @@ public class Cart : MonoBehaviour
     [SerializeField] private TextMeshProUGUI valueText;
     [SerializeField] private TextMeshProUGUI moneyText;
     [SerializeField] private Items items;
+    [SerializeField] private SoundManager soundManager;
     private float value;
 
    
@@ -57,6 +58,7 @@ public class Cart : MonoBehaviour
         
         if (gameManager.money >= value)
         {
+            soundManager.PlayCashRegisterSound();
             gameManager.money -= value;
             items.itemQuantities[1] += entry1.quantity;
             items.itemQuantities[2] += entry2.quantity;

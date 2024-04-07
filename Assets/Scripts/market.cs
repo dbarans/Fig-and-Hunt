@@ -18,6 +18,7 @@ public class market : MonoBehaviour
     private float sellValue;
     private System.Random random = new System.Random();
     [SerializeField] private Items items;
+    [SerializeField] private SoundManager soundManager;
     private int figs;
 
     private void Start()
@@ -94,10 +95,14 @@ public class market : MonoBehaviour
     }
     public void sellFigs()
     {
-        figs -= figsToSell;
-        items.itemQuantities[0] = figs;
-        gameManager.money += sellValue;
-        figsToSell = 0;
+        if (figsToSell != 0)
+        {
+            figs -= figsToSell;
+            items.itemQuantities[0] = figs;
+            gameManager.money += sellValue;
+            figsToSell = 0;
+            soundManager.PlayCashRegisterSound();
+        }
     }
 
 

@@ -6,10 +6,12 @@ public class Animal : MonoBehaviour
     [SerializeField] private TreeManager treeManager;
     [SerializeField] private float speed = 3f;
     private SpriteRenderer spriteRenderer;
+    private SoundManager soundManager;
 
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        soundManager = FindAnyObjectByType<SoundManager>();
 
         if (treeManager == null)
         {
@@ -50,6 +52,7 @@ public class Animal : MonoBehaviour
     {
         Debug.Log("destroy fox");
         Destroy(gameObject);
+        soundManager.PlayGunshotSound();
     }
 
     void FindRandomTree()
