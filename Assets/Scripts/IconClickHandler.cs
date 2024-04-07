@@ -5,8 +5,9 @@ public class IconClickHandler : MonoBehaviour
 {
     [SerializeField] private GameObject store;
     [SerializeField] private GameObject market;
+    [SerializeField] private GameObject storage;
 
- 
+
     public void activateStore()
     { 
         store.SetActive(true);
@@ -23,6 +24,14 @@ public class IconClickHandler : MonoBehaviour
     public void deactivateMarket()
     {
         market.SetActive(false);
+    }
+    public void activateStorage()
+    {
+        storage.SetActive(true); 
+    }
+    public void deactivateStorage()
+    {
+        storage.SetActive(false);
     }
 
 }
