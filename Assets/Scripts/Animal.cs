@@ -1,3 +1,4 @@
+using DG.Tweening.Core.Easing;
 using UnityEngine;
 using UnityEngine.Rendering;
 
@@ -8,16 +9,14 @@ public class Animal : MonoBehaviour
     [SerializeField] private float speed = 3f;
     private SpriteRenderer spriteRenderer;
     private SoundManager soundManager;
-    
-   [SerializeField] private gameManager gameManager;
-
+    [SerializeField] private gameManager gameManager;
+    private bool isFrozen = false; // Flaga okreœlaj¹ca, czy obiekt jest zamro¿ony
 
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         soundManager = FindAnyObjectByType<SoundManager>();
         gameManager = FindAnyObjectByType<gameManager>();
-
 
         if (treeManager == null)
         {
@@ -34,36 +33,53 @@ public class Animal : MonoBehaviour
 
     void Update()
     {
-        if (targetTree != null)
+        if (!isFrozen)
         {
-            Vector3 direction = (targetTree.transform.position - transform.position).normalized;
-
-            transform.Translate(direction * speed * Time.deltaTime);
-
-            if (direction.x < 0)
+            if (targetTree != null)
             {
-                spriteRenderer.flipX = false;
+                Vector3 direction = (targetTree.transform.position - transform.position).normalized;
+                transform.Translate(direction * speed * Time.deltaTime);
+
+                if (direction.x < 0)
+                {
+                    spriteRenderer.flipX = false;
+                }
+                else if (direction.x > 0)
+                {
+                    spriteRenderer.flipX = true;
+                }
             }
-            else if (direction.x > 0)
+            else
             {
-                spriteRenderer.flipX = true;
+                SearchNearestTree();
             }
-        }
-        else
-        {
-            SearchNearestTree();
         }
     }
+
     private void OnMouseDown()
     {
-        if (gameManager.ammo > 0)
+        if (gameManager.ammo > 0) 
         {
             Destroy(gameObject);
             soundManager.PlayGunshotSound();
             gameManager.ammo -= 1;
             gameManager.UpdateAmmo();
         }
-        
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.CompareTag("Tree"))
+        {
+            isFrozen = true;
+        }
+
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Tree"))
+        {
+            isFrozen = false;
+        }
     }
 
     void FindRandomTree()
@@ -78,8 +94,7 @@ public class Animal : MonoBehaviour
 
     void SearchNearestTree()
     {
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, 200f); // Ustaw promieñ wyszukiwania
-
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, 200f);
         float minDistance = Mathf.Infinity;
         GameObject nearestTree = null;
 
@@ -102,4 +117,6 @@ public class Animal : MonoBehaviour
             targetTree = nearestTree;
         }
     }
+
+
 }

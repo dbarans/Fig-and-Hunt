@@ -58,19 +58,17 @@ public class FigTree : MonoBehaviour
             fruits[i] = transform.GetChild(i).gameObject;
         }
 
-        bool foundNewFruits = false;
 
         foreach (GameObject fruit in fruits)
         {
             if (fruit.activeSelf)
             {
-                foundNewFruits = true;
                 StartCoroutine(EatFruit(fruit));
                 DestroyTree();
             }
         }
 
-        
+
     }
 
     IEnumerator EatFruit(GameObject fruit)
