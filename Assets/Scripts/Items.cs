@@ -1,22 +1,34 @@
-using DG.Tweening.Core.Easing;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using static UnityEngine.EventSystems.EventTrigger;
+using System.Collections.Generic;
+using TMPro;
 
 public class Items : MonoBehaviour
 {
-    [SerializeField] private List<Entry> items = new List<Entry>();
-    [SerializeField] private gameManager gameManager;
-    public int item1Quantity;
-    public int item2Quantity;
-    public int item3Quantity;
-    public int item4Quantity;
+    public List<GameObject> items = new List<GameObject>();
+    public List<int> itemQuantities = new List<int>();
 
-    public void UpdateEntry()
+    private void Update()
     {
-        if (item1Quantity <= 0)
+        UpdateItems();
+    }
+
+    public void UpdateItems()
+    {
+        for (int i = 0; i < items.Count; i++)
         {
+            Transform quantityTransform = items[i].transform.GetChild(2);
+            TextMeshProUGUI quantityText = quantityTransform.GetComponent<TextMeshProUGUI>();
+            quantityText.text = itemQuantities[i].ToString();
+
+            if (itemQuantities[i] <= 0)
+            {
+                items[i].SetActive(false);
+            }
+            else
+            {
+                items[i].SetActive(true);
+            }
+
             
         }
     }

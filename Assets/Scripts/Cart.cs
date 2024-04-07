@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics;
 using TMPro;
 using UnityEngine;
 
@@ -59,9 +58,10 @@ public class Cart : MonoBehaviour
         if (gameManager.money >= value)
         {
             gameManager.money -= value;
-            items.item1Quantity += entry1.quantity;
-            items.item2Quantity += entry2.quantity;
-            items.item3Quantity += entry3.quantity;
+            items.itemQuantities[1] += entry1.quantity;
+            items.itemQuantities[2] += entry2.quantity;
+            items.itemQuantities[3] += entry3.quantity;
+            Debug.Log(items.itemQuantities[1]);
 
             entry1.quantity = 0;
             entry2.quantity = 0;
