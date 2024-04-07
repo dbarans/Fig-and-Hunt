@@ -17,6 +17,7 @@ public class Cart : MonoBehaviour
     private void Update()
     {
         UpdateEntry();
+        value = entry1.value + entry2.value + entry3.value;
     }
     public void UpdateEntry()
     {
@@ -48,8 +49,11 @@ public class Cart : MonoBehaviour
     
     public void Buy()
     {
+        
+        
         if (gameManager.money >= value)
         {
+            
             gameManager.item1 += entry1.quantity;
             gameManager.item2 += entry2.quantity;
             gameManager.item3 += entry3.quantity;
@@ -57,6 +61,7 @@ public class Cart : MonoBehaviour
             entry2.quantity = 0;
             entry3.quantity = 0;
             gameManager.money -= value;
+            Debug.Log(gameManager.money);
         }
 
     }

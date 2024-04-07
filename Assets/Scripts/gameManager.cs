@@ -27,7 +27,7 @@ public class gameManager : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(money);
+       
     }
   
 }

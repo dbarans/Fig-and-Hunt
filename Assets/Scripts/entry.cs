@@ -6,7 +6,7 @@ using UnityEngine;
 public class entry : MonoBehaviour
 {
     public int quantity;
-    private float value;
+    public float value;
     public float price;
     private gameManager gameManager;
     [SerializeField] private TextMeshProUGUI valueText;
