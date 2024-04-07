@@ -6,7 +6,7 @@ public class Items : MonoBehaviour
 {
     public List<GameObject> items = new List<GameObject>();
     public List<int> itemQuantities = new List<int>();
-
+    
     private void Update()
     {
         UpdateItems();

@@ -916,6 +916,7 @@ MonoBehaviour:
   marketPriceText: {fileID: 8221815924916234074}
   figsText: {fileID: 2631650190033355636}
   moneyText: {fileID: 3553559861352796629}
+  items: {fileID: 1939450298451195624}
 --- !u!1 &1869437360312237684
 GameObject:
   m_ObjectHideFlags: 0

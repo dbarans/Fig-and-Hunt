@@ -6,6 +6,7 @@ using UnityEngine;
 public class Fruit : MonoBehaviour
 {
     private gameManager gameManager;
+    private int figs;
     private int currentState = 1;
 
     public float minTime = 3f;
@@ -78,8 +79,8 @@ public class Fruit : MonoBehaviour
         {
             SetFruitState1();
             StartChangeStateCoroutine();
-            gameManager.figs += 1;
-            Debug.Log(gameManager.figs);
+            gameManager.increaseFigs();
+            
         }
     }
 }

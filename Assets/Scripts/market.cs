@@ -17,6 +17,8 @@ public class market : MonoBehaviour
     private gameManager gameManager;
     private float sellValue;
     private System.Random random = new System.Random();
+    [SerializeField] private Items items;
+    private int figs;
 
     private void Start()
     {
@@ -28,10 +30,11 @@ public class market : MonoBehaviour
     private void Update()
     {
         UpdateText();
+        figs = items.itemQuantities[0];
     }
     public void IncreaseFigsToSell()
     {
-        if (figsToSell < gameManager.figs)
+        if (figsToSell < figs)
         {
             figsToSell += 1;
             
@@ -87,11 +90,12 @@ public class market : MonoBehaviour
         sellValueText.text = sellValue.ToString("0.00") + "$";
         marketPriceText.text = "market value: " + marketPrice.ToString("0.00") + "$";
         moneyText.text = "Money: " + gameManager.money.ToString("0.00") + "$";
-        figsText.text = "Figs: " + gameManager.figs.ToString();
+        figsText.text = "Figs: " + figs.ToString();
     }
     public void sellFigs()
     {
-        gameManager.figs -= figsToSell;
+        figs -= figsToSell;
+        items.itemQuantities[0] = figs;
         gameManager.money += sellValue;
         figsToSell = 0;
     }

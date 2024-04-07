@@ -5,9 +5,14 @@ using UnityEngine;
 
 public class gameManager : MonoBehaviour
 {
-    [HideInInspector]
-    public int figs;
+    
     public float money;
+    [SerializeField] Items items;
+
+    public void increaseFigs()
+    {
+        items.itemQuantities[0] += 1;
+    }
 
 
   
