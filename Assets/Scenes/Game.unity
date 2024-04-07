@@ -263,7 +263,7 @@ Transform:
   m_GameObject: {fileID: 79299327}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -34.6, y: 26.1, z: 0}
+  m_LocalPosition: {x: -36.61, y: 29.36, z: 0}
   m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -1021,7 +1021,7 @@ Transform:
   m_GameObject: {fileID: 742041693}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 36.3, y: 26.1, z: 0}
+  m_LocalPosition: {x: 35.15, y: 29.55, z: 0}
   m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -1274,7 +1274,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 926e766921b37a143ac1c30d873ecbe3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5407416a947f045438216de751803cde, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1379,8 +1379,8 @@ Transform:
   m_GameObject: {fileID: 1556040247}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.21, y: 26.1, z: 0}
-  m_LocalScale: {x: 0.43, y: 0.42999998, z: 0.43}
+  m_LocalPosition: {x: 0, y: 28.31, z: 0}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -1815,7 +1815,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: abbdd169f723db54181ca2b83a6c708e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 977b824c034e0e149912d931858582be, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1835,8 +1835,8 @@ Transform:
   m_GameObject: {fileID: 2119505378}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.76, y: 1.69, z: 0}
-  m_LocalScale: {x: 0.44, y: 0.44, z: 0.44}
+  m_LocalPosition: {x: -1.36, y: 6.98, z: 0}
+  m_LocalScale: {x: 1.28, y: 1.28, z: 1.28}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -1860,8 +1860,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 80, y: 45, z: 0.2}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 19.94, y: 16.9, z: 0.19999999}
+  m_Center: {x: 0.74, y: 1.99, z: 0}
 --- !u!1 &2135890635
 GameObject:
   m_ObjectHideFlags: 0
