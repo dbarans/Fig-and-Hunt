@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class Animal : MonoBehaviour
 {
@@ -7,11 +8,16 @@ public class Animal : MonoBehaviour
     [SerializeField] private float speed = 3f;
     private SpriteRenderer spriteRenderer;
     private SoundManager soundManager;
+    
+   [SerializeField] private gameManager gameManager;
+
 
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         soundManager = FindAnyObjectByType<SoundManager>();
+        gameManager = FindAnyObjectByType<gameManager>();
+
 
         if (treeManager == null)
         {
@@ -50,9 +56,14 @@ public class Animal : MonoBehaviour
     }
     private void OnMouseDown()
     {
-        Debug.Log("destroy fox");
-        Destroy(gameObject);
-        soundManager.PlayGunshotSound();
+        if (gameManager.ammo > 0)
+        {
+            Destroy(gameObject);
+            soundManager.PlayGunshotSound();
+            gameManager.ammo -= 1;
+            gameManager.UpdateAmmo();
+        }
+        
     }
 
     void FindRandomTree()
