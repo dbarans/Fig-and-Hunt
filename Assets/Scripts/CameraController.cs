@@ -2,6 +2,7 @@ using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class CameraController : MonoBehaviour
 {
@@ -11,12 +12,16 @@ public class CameraController : MonoBehaviour
     [SerializeField] Camera camFieldTwo;
     [SerializeField] Camera camFieldThree;
     [SerializeField] GameObject computer;
+    [SerializeField] private GameObject ammoPanel;
     [SerializeField] float time;
+
     private bool isInMainRoom;
+
 
     private void Start()
     {
         isInMainRoom = true;
+        ammoPanel.SetActive(false);
     }
     void Update()
     {
@@ -35,22 +40,25 @@ public class CameraController : MonoBehaviour
                     camRoom.gameObject.SetActive(false);
                     camFieldOne.gameObject.SetActive(true);
                     isInMainRoom = false;
+                    ammoPanel.SetActive(true);
                 }
                 if(clickedObject.name == "Window2")
                 {
                     camRoom.gameObject.SetActive(false);
                     camFieldTwo.gameObject.SetActive(true);
                     isInMainRoom = false;
+                    ammoPanel.SetActive(true);
 
-                    }
-                    if (clickedObject.name == "Window3")
+                }
+                if (clickedObject.name == "Window3")
                 {
                     camRoom.gameObject.SetActive(false);
                     camFieldThree.gameObject.SetActive(true);
                     isInMainRoom = false;
+                    ammoPanel.SetActive(true);
 
-                    }
-                    if (clickedObject.name =="Computer")
+                }
+                if (clickedObject.name =="Computer")
                 {
                     Debug.Log("computer clicked");
                     computer.gameObject.SetActive(true);
@@ -67,6 +75,7 @@ public class CameraController : MonoBehaviour
             camFieldTwo.gameObject.SetActive(false);
             camFieldThree.gameObject.SetActive(false);
             computer.gameObject.SetActive(false);
+            ammoPanel.gameObject.SetActive(false);
             isInMainRoom = true;
         }
     }
