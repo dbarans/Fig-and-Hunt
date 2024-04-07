@@ -11,6 +11,7 @@ public class Cart : MonoBehaviour
     [SerializeField] private entry entry3;
     [SerializeField] private gameManager gameManager;
     [SerializeField] private TextMeshProUGUI valueText;
+    [SerializeField] private TextMeshProUGUI moneyText;
     private float value;
 
     private void Start()
@@ -22,6 +23,7 @@ public class Cart : MonoBehaviour
         UpdateEntry();
         value = entry1.quantity * entry1.price + entry2.quantity * entry2.price + entry3.quantity * entry3.price;
         valueText.text = "Total: " + value.ToString("0.00") + "$";
+        moneyText.text = "Money: " + gameManager.money.ToString("0.00") + "$";
 
     }
     public void UpdateEntry()
@@ -67,8 +69,10 @@ public class Cart : MonoBehaviour
             entry2.quantity = 0;
             entry3.quantity = 0;
 
-            value = 0;
-            valueText.text = "Total: " + value.ToString("0.00") + "$";
+            
+           
+            
+
 
         }
        
