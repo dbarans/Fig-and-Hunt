@@ -4,10 +4,13 @@ public class Animal : MonoBehaviour
 {
     private GameObject targetTree;
     [SerializeField] private TreeManager treeManager;
-    [SerializeField] private float speed = 3f; 
+    [SerializeField] private float speed = 3f;
+    private SpriteRenderer spriteRenderer;
 
     void Start()
     {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+
         if (treeManager == null)
         {
             treeManager = FindObjectOfType<TreeManager>();
@@ -23,19 +26,27 @@ public class Animal : MonoBehaviour
         {
             int randomIndex = Random.Range(0, trees.Length);
             targetTree = trees[randomIndex];
-          
         }
-        
     }
 
     void Update()
     {
         if (targetTree != null)
         {
-      
             Vector3 direction = (targetTree.transform.position - transform.position).normalized;
 
             transform.Translate(direction * speed * Time.deltaTime);
+
+           
+            if (direction.x < 0)
+            {
+                spriteRenderer.flipX = false;
+            }
+            else if (direction.x > 0)
+            {
+                spriteRenderer.flipX = true;
+            }
         }
     }
 }
+
