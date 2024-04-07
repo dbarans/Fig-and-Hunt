@@ -8,6 +8,13 @@ public class gameManager : MonoBehaviour
     [HideInInspector]
     public int figs;
     public float money;
+    public int item1;
+    public int item2;
+    public int item3;
+    public float item1Price;
+    public float item2Price;
+    public float item3Price;
+
     private void Awake()
     {
         figs = 5;
@@ -20,7 +27,7 @@ public class gameManager : MonoBehaviour
 
     void Update()
     {
-        
+        Debug.Log(money);
     }
   
 }
