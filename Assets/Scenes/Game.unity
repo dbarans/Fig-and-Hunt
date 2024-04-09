@@ -1833,10 +1833,10 @@ RectTransform:
   - {fileID: 1820799229}
   m_Father: {fileID: 683227155}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 80.5, y: 13}
-  m_SizeDelta: {x: 398.37805, y: -693.933}
+  m_SizeDelta: {x: 398.37805, y: 386.06702}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &296566821
 GameObject:
@@ -3940,10 +3940,10 @@ RectTransform:
   - {fileID: 224639250}
   m_Father: {fileID: 683227155}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 106.5, y: 19}
-  m_SizeDelta: {x: -1475.606, y: 420.239}
+  m_SizeDelta: {x: 444.39404, y: 420.239}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &683227154
 GameObject:
@@ -7922,7 +7922,7 @@ GameObject:
   - component: {fileID: 1453736514}
   - component: {fileID: 1453736513}
   m_Layer: 0
-  m_Name: pokoj
+  m_Name: room
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7989,8 +7989,8 @@ Transform:
   m_GameObject: {fileID: 1453736512}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.56927013, y: 14.899733, z: 0}
-  m_LocalScale: {x: 1.2652, y: 1.2652, z: 1.2652}
+  m_LocalPosition: {x: -0.7299, y: 14.813, z: 0}
+  m_LocalScale: {x: 1.2730579, y: 1.2763574, z: 1.2652}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
