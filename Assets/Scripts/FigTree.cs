@@ -7,7 +7,7 @@ public class FigTree : MonoBehaviour
     private TreeManager treeManager;
     private GameObject[] fruits;
     private Dictionary<GameObject, Coroutine> eatingCoroutines = new Dictionary<GameObject, Coroutine>();
-    private HashSet<GameObject> foxesInside = new HashSet<GameObject>(); // Zbiór przechowuj¹cy referencje do wszystkich lisi wewn¹trz obszaru kolizji
+    private HashSet<GameObject> foxesInside = new HashSet<GameObject>();
 
     void Start()
     {
